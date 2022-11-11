@@ -248,7 +248,8 @@
   var translate = function(tar, query, callback) {
     var appid = "20190906000332471";
     var key = "X4wgwMaf7bVZIqBz9Kv7";
-    var salt = new Date().getTime();
+    // var salt = new Date().getTime();
+    var salt = Math.floor(Math.random()*(65536-32768+1)+32768);
     var from = "auto";
     var to = "zh";
     var str1 = appid + query + salt + key;
