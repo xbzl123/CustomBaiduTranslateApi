@@ -1,4 +1,6 @@
-<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script type="text/JavaScript"  src="js/md5.js"></script>
+
 <script>
   var MD5 = function(string) {
     function RotateLeft(lValue, iShiftBits) {
@@ -254,7 +256,10 @@
     var to = "zh";
     var str1 = appid + query + salt + key;
     var sign = MD5(str1);
-    console.log(sign)
+    hash = hex_md5(str1)
+    console.log('1='+hash)
+
+    console.log('2='+sign)
 
     $.ajax({
       url: "https://api.fanyi.baidu.com/api/trans/vip/translate",
