@@ -254,6 +254,7 @@
     var to = "zh";
     var str1 = appid + query + salt + key;
     var sign = MD5(str1);
+    console.log(sign)
 
     $.ajax({
       url: "https://api.fanyi.baidu.com/api/trans/vip/translate",
