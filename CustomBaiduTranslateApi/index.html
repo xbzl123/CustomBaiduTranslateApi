@@ -258,7 +258,7 @@
     $.ajax({
       url: "https://api.fanyi.baidu.com/api/trans/vip/translate",
       async: true,
-      type: "get",
+      type: "post",
       dataType: "jsonp",
       data: {
         q: query,
@@ -269,7 +269,8 @@
         sign: sign
       },
       success: function(data) {
-        callback(data.trans_result[0]["dst"]);
+        // callback(data.trans_result[0]["dst"]);
+        callback(data);
       }
     });
   };
