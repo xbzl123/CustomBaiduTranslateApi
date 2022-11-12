@@ -238,15 +238,7 @@
   var my_word = getQueryVariable("word");
 
 
-  var str2utf8 = window.TextEncoder ? function(str) {
-    var encoder = new TextEncoder('utf8');
-    var bytes = encoder.encode(str);
-    var result = '';
-    for(var i = 0; i < bytes.length; ++i) {
-        result += String.fromCharCode(bytes[i]);
-    }
-    return result;
-} : function(str) {
+function str2utf8(str) {
     return eval('\''+encodeURI(str).replace(/%/gm, '\\x')+'\'');
 }
   function getQueryVariable(variable) {
