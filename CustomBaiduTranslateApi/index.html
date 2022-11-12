@@ -1,5 +1,6 @@
 <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="./js/md5.js"></script>
+<script src="./js/base64.js"></script>
 
 
 <script>
@@ -242,9 +243,7 @@
     for (var i = 0; i < vars.length; i++) {
       var pair = vars[i].split("=");
       if (pair[0] == variable) {
-        var href = decodeURIComponent(pair[1]);
-        var name = href.split('?')[1].split('=')[1];
-        return name;
+        return decodeURIComponent(base64.encode(decodeURIComponent(pair[1])));
       }
     }
     return null;
