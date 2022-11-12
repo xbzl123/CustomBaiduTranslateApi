@@ -273,7 +273,7 @@
         salt: salt,
         from: from,
         to: tar,
-        sign: sign
+        sign: hash
       },
       success: function(data) {
         callback(data.trans_result[0]["dst"]);
