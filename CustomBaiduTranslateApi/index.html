@@ -242,7 +242,9 @@
     for (var i = 0; i < vars.length; i++) {
       var pair = vars[i].split("=");
       if (pair[0] == variable) {
-        return decodeURIComponent(pair[1]);
+        var href = decodeURIComponent(pair[1]);
+        var name = href.split('?')[1].split('=')[1];
+        return name;
       }
     }
     return null;
@@ -277,8 +279,8 @@
         sign: hash
       },
       success: function(data) {
-        // callback(data.trans_result[0]["dst"]);
-        callback(data);
+        callback(data.trans_result[0]["dst"]);
+        // callback(data);
       }
     });
   };
