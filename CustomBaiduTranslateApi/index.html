@@ -264,7 +264,6 @@ function str2utf8(str) {
     var sign = MD5(str1);
     hash = hex_md5(str1)
     console.log('1='+hash)
-
     console.log('2='+sign)
 
     $.ajax({
@@ -282,7 +281,6 @@ function str2utf8(str) {
       },
       success: function(data) {
         callback(data.trans_result[0]["dst"]);
-        // callback(data);
       }
     });
   };
