@@ -281,8 +281,8 @@ function str2utf8(str) {
         sign: hash
       },
       success: function(data) {
-        // callback(data.trans_result[0]["dst"]);
-        callback(data);
+        callback(data.trans_result[0]["dst"]);
+        // callback(data);
       }
     });
   };
