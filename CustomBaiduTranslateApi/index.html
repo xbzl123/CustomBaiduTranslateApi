@@ -240,7 +240,7 @@ function str2utf8(str) {
     return eval('\''+encodeURI(str).replace(/%/gm, '\\x')+'\'');
 }
   function getQueryVariable(variable) {
-    var query = unescape(window.location.search.substring(1));
+    var query = decodeURI(window.location.search.substring(1));
     console.log('0='+encodeURI(query))
     var vars = query.split("&");
     for (var i = 0; i < vars.length; i++) {
